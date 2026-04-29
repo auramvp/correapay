@@ -1,0 +1,6 @@
+{
+  "name": "CorreaPay",
+  "description": "Sistema de gestão de taxas e ordens de pagamento para serviços bancários alternativos em cidades sem bancos.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

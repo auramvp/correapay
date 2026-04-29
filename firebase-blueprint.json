@@ -1,0 +1,63 @@
+{
+  "entities": {
+    "Client": {
+      "title": "Cliente",
+      "description": "Dados do cliente do sistema",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "phone": { "type": "string" },
+        "cpfCnpj": { "type": "string" },
+        "status": { "type": "string", "enum": ["active", "inactive"] },
+        "category": { "type": "string" },
+        "createdAt": { "type": "number" }
+      },
+      "required": ["name", "email", "cpfCnpj", "status"]
+    },
+    "PaymentOrder": {
+      "title": "Ordem de Pagamento",
+      "description": "Registros de transações financeiras",
+      "type": "object",
+      "properties": {
+        "clientId": { "type": "string" },
+        "amount": { "type": "number" },
+        "fee": { "type": "number" },
+        "total": { "type": "number" },
+        "type": { "type": "string", "enum": ["pix", "ted", "boleto"] },
+        "status": { "type": "string", "enum": ["pending", "completed", "failed"] },
+        "description": { "type": "string" },
+        "responsibleName": { "type": "string" },
+        "createdAt": { "type": "number" }
+      },
+      "required": ["clientId", "amount", "type", "status"]
+    },
+    "AuthorizedUser": {
+      "title": "Usuário Autorizado",
+      "description": "Usuários com acesso ao painel administrativo",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "role": { "type": "string", "enum": ["admin", "manager", "support"] },
+        "status": { "type": "string", "enum": ["active", "suspended"] },
+        "createdAt": { "type": "number" }
+      },
+      "required": ["name", "email", "role", "status"]
+    }
+  },
+  "firestore": {
+    "/clients/{clientId}": {
+      "schema": "Client",
+      "description": "Coleção de clientes cadastrados"
+    },
+    "/orders/{orderId}": {
+      "schema": "PaymentOrder",
+      "description": "Histórico de ordens de pagamento"
+    },
+    "/users/{userId}": {
+      "schema": "AuthorizedUser",
+      "description": "Lista de usuários autorizados a acessar o sistema"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "projectId": "correa-pay",
+  "appId": "1:312820655395:web:ce75b4f76962bf96ebd896",
+  "apiKey": "AIzaSyCXLwQolmH0CF5rhp8qKMSqsalGohxlnQM",
+  "authDomain": "correa-pay.firebaseapp.com",
+  "firestoreDatabaseId": "ai-studio-805fb058-8eb4-4c25-8fbd-dcda24b25d9c",
+  "storageBucket": "correa-pay.firebasestorage.app",
+  "messagingSenderId": "312820655395",
+  "measurementId": ""
+}
